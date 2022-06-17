@@ -142,7 +142,9 @@ case "$TODO_NOTE_ACTION" in
 
 "__rmfromtext")
     getnotenamefromtext "$*"
-    rm -f "$TODO_NOTES_DIR/$notename"
+    if [ -n "$notename" ]; then
+        rm -f "$TODO_NOTES_DIR/$notename"
+    fi
     ;;
 
 *)
